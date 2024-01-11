@@ -1,0 +1,64 @@
+<html>
+    <head> 
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&family=Nunito:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <style>
+            * {
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+            }
+            body {
+                display: flex;
+                margin: 20px;
+                font-family: 'Montserrat';
+            }
+            .parent {
+                border-radius: 10px;
+                border: 1px solid #999;
+                width: 600px;
+            }
+            .links {
+                color:  #3498db ;
+                text-decoration: none;
+                margin-right: 8px;
+                font-weight: 500;
+            }
+            .links-container {
+                border-bottom: 1px solid #999;
+                padding: 20px;
+            }
+            .text-container {
+                padding: 20px;
+            }
+            .text-container h5 {
+                margin-bottom: 6px;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+
+
+        <div class="parent" x-data="{ tab: 1 }">
+            <div class="links-container">
+                <a href="#" class="links" @click="tab = 1">Tab 1</a>- 
+                <a href="#" class="links" @click="tab = 2">Tab 2</a>- 
+                <a href="#" class="links" @click="tab = 3">Tab 3</a>
+            </div>
+
+            <div class="text-container" x-show="tab === 1">
+                <h5>Tab 1</h5>
+                <p>Einhver texti í tab 1.</p>
+            </div>
+            <div class="text-container" x-show="tab === 2">
+                <h5>Tab 2</h5>
+                <p>Allt annar texti í tab 2.</p>
+            </div>
+            <div class="text-container" x-show="tab === 3">
+                <h5>Tab 3</h5>
+                <p>Allt allt annar texti í tab 3.</p>
+            </div>
+        </div>
+    </body>
+</html>
